@@ -13,8 +13,13 @@
             <!-- Listings -->
             <div class="col-md-8 mt-3 left">
                 {% for listing in object_list %}
+                <ul>
+                    <li>
                     {{listing.address}}
                     {{listing.content}}
+                    <img src="{{listing.pictures}}" alt="{{listing.address}}">
+                    </li>
+                </ul>
                 {% endfor %}
             </div>
         </div>
