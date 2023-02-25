@@ -1,19 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container">
-    <div class="row">
-        <!-- Listings -->
-        <div class="col-md-8 mt-3 left">
-            {% for Post in Listings %}
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h2 class="card-title">{{ post.title }}</h2>
-                    <p class="card-text">{{post.content|slice:":200" }}</p>
-                    <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
-                </div>
+<style>
+    body {
+      background-repeat: no-repeat;
+    
+      background-size: cover; 
+    }
+  </style>
+<body class="bg-dark-subtle" style="background-image: url('https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2019/4/16/1/HUHH2019-Waterfront_Jensen-Beach-FL_34.jpg.rend.hgtvcom.966.725.suffix/1555428341787.jpeg');"></body>
+    <div class="container">
+        <div class="row">
+            <!-- Listings -->
+            <div class="col-md-8 mt-3 left">
+                {% for listing in object_list %}
+                    {{listing.address}}
+                    {{listing.content}}
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
     </div>
-</div>
+</body>
 {%endblock%}

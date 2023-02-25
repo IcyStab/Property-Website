@@ -21,5 +21,6 @@ urlpatterns = [
     path('myapp/', include('myapp.urls')),
     path('', include('home.urls')),
     path('listings/', include('listings.urls')),
-    path('testing', include('AvailableUnits.urls'))
+    path('testing', include('AvailableUnits.urls')),
+    path('about', include('about.urls'))
 ]

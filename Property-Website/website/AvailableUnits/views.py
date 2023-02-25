@@ -1,13 +1,9 @@
-from django.shortcuts import render
-from django.views import generic
+
 from .models import Listings
+from django.views.generic import ListView, DetailView
 
 # Create your views here.
-class PostList(generic.ListView):
-    queryset = Listings.objects.filter(status=1).order_by('-created_on')
-    template_name = 'index.html'
 
-class PostDetail(generic.DetailView):
+class HomeView(ListView):
     model = Listings
-    template_name = 'post_detail.html'
-
+    template_name = 'listings_list.html'
