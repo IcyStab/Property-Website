@@ -1,3 +1,4 @@
+
 {% extends "base.html" %}
 {% block content %}
 <style>
@@ -5,20 +6,20 @@
       background-repeat: no-repeat;
     
       background-size: cover; 
+
+      overflow-y:auto
     }
   </style>
-<body class="bg-dark-subtle" style="background-image: url('https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2019/4/16/1/HUHH2019-Waterfront_Jensen-Beach-FL_34.jpg.rend.hgtvcom.966.725.suffix/1555428341787.jpeg');"></body>
+<body>
     <div class="container">
         <div class="row">
             <!-- Listings -->
-            <div class="col-md-8 mt-3 left">
+            <div class="col-12 text-center" style="font-family: 'Times New Roman'">
                 {% for listing in object_list %}
                 <ul>
-                    <li>
-                    {{listing.address}}
-                    <img src="{{listing.pictures.url}}" alt="{{listing.address}}">
-                    {{listing.content}}
-                    </li>
+                    <h1><u>{{listing.address}}</u></h1>
+                    <div><img src="{{listing.pictures.url}}" style="background-color: black;"class="img-thumbnail border border-dark" alt="{{listing.address}}"></div>
+                    <h2><span class="bg-light bg-opacity-50 rounded">{{listing.content}}</span></h2>
                 </ul>
                 {% endfor %}
             </div>

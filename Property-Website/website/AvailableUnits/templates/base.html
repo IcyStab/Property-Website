@@ -17,53 +17,29 @@
     </style>
     <title>Document</title>
 </head>
-<!-- Background -->
 <body class="bg-dark-subtle background">
 
-<!-- Nav Bar -->
+
     <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
         <div class="container-fluid">
 
-            <a class="navbar-brand" style="font-family:'Times New Roman', Times, serif" href="http://127.0.0.1:8000/">Dependable Properties</a>
+            <a class="navbar-brand" style="font-family:'Times New Roman', Times, serif" href="http://127.0.0.1:8000/testing">Dependable Properties</a>
 
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                 <li class="nav-link">
                   <a class="nav-link" style="font-family:'Times New Roman', Times, serif" href=http://127.0.0.1:8000/about>About us</a>
                 </li>
-            </ul>
-              {% if user.is_authenticated %}
-                <form action="{% url 'logout' %}" method="post" class="navbar">
-                  {% csrf_token %}
-                <input type="submit" value="Logout">
-                </form>
-              {% else %}
-                <a class="navbar" href="http://127.0.0.1:8000/login">Login/Register</a>
-              {% endif %}
+              </ul>
 
+              <a class="navbar" href="http://127.0.0.1:8000/admin">Login</a>
+        
+            
 
         </nav>
-
-
 {%  block content %}
 
 {% endblock content %}
-
-<!-- Footer -->
-<footer class="bg-dark-subtle text-center text-white fixed-bottom" data-bs-theme="dark">
-
-  <div class="container p-4 pb-0">
-    <a>Contact me on</a>
-    <a href="https://www.facebook.com/diane.mcentirequitmeyer"> Facebook</a>
-    <a> or call/text (636)-725-5617</a>
-  </div>
-
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2023 Copyright:
-    <a class="text-white">Dependable Properties LLC</a>
-  </div>
-
-</footer>
 
 </body>
 </html>
