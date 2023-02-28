@@ -1,5 +1,6 @@
 
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
 <style>
     body {
@@ -10,6 +11,10 @@
       overflow-y:auto
     }
   </style>
+<head>
+    
+    <script src="{% static 'AvailableUnits/js/main.js' %}"></script>
+</head>
 <body>
     <div class="container">
         <div class="row">
@@ -17,9 +22,9 @@
             <div class="col-12 text-center" style="font-family: 'Times New Roman'">
                 {% for listing in object_list %}
                 <ul>
-                    <h1><u>{{listing.address}}</u></h1>
+                    <h1><u><a class="btn btn-outline-dark btn-lg bg-light bg-opacity-50" onclick='toggleContent({{forloop.counter}})'>{{listing.address}}</a></u></h1>
                     <div><img src="{{listing.pictures.url}}" style="background-color: black;"class="img-thumbnail border border-dark" alt="{{listing.address}}"></div>
-                    <h2><span class="bg-light bg-opacity-50 rounded">{{listing.content}}</span></h2>
+                    <h2 id="listingContent{{ forloop.counter }}" style="display:none"><span class="bg-light bg-opacity-50 rounded">{{listing.content}}</span></h2>
                 </ul>
                 {% endfor %}
             </div>
